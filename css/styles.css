@@ -8,10 +8,56 @@
   --button-color: #404bbf;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   color: var(--default-text);
   background-color: var(--text-white-color);
   font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  border-bottom: 1px solid var(--active-color);
+  max-width: 1440px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 156px;
+}
+
+.container-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-page {
+  display: flex;
 }
 
 .logo {
@@ -23,6 +69,7 @@ body {
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  display: inline-block;
 }
 
 .logo.link {
@@ -41,28 +88,34 @@ body {
   color: var(--active-color);
 }
 
-.list {
-  list-style-type: none;
+.nav-list {
+  display: flex;
+  gap: 40px;
+  margin-left: 76px;
 }
 
-.list .link {
+.nav-list .link {
   letter-spacing: 0.02em;
   line-height: 1.5;
   font-weight: 500;
   text-decoration: none;
 }
 
-.list .link.link-first {
+.nav-list .link.link-first {
   color: var(--navigate-text);
 }
 
-.list .link.link-first:hover,
-.list .link.link-first:focus {
+.nav-list .link.link-first:hover,
+.nav-list .link.link-first:focus {
   color: var(--button-color);
 }
 
 .contacts {
   font-style: normal;
+}
+
+.container-contacts {
+  display: flex;
 }
 
 .link-contacts {
@@ -72,22 +125,29 @@ body {
   letter-spacing: 0.02em;
 }
 
+.list-contacts {
+  display: flex;
+  gap: 40px;
+}
+
 .link-contacts.address {
   color: var(--default-text);
   text-decoration: none;
 }
 
-.list .link-contacts.address:hover,
-.list .link-contacts.address:focus {
+.list-contacts .link-contacts.address:hover,
+.list-contacts.link-contacts.address:focus {
   color: var(--button-color);
 }
 
-.list .link:active {
+.list-contacts .link:active {
   color: var(--active-color);
 }
 
 .page {
   background-color: var(--navigate-text);
+  width: 1440px;
+  padding: 188px 472px;
 }
 
 .page-title {
@@ -96,17 +156,27 @@ body {
   color: var(--text-white-color);
   text-align: center;
   letter-spacing: 0.02em;
+  max-width: 496px;
+  text-align: center;
 }
 
 .page-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   letter-spacing: 0.04em;
   cursor: pointer;
   background-color: var(--link-focused);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
   color: var(--text-white-color);
   font-size: 16px;
   line-height: 1.5;
+  margin-top: 48px;
+  margin-left: 164px;
+  padding: 16px 32px;
 }
 
 .page-button:hover,
@@ -115,12 +185,24 @@ body {
   color: var(--text-white-color);
 }
 
+.advice {
+  padding: 120px 156px;
+  max-width: 1440px;
+}
+
+.list-advice {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
 .list-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   color: var(--navigate-text);
   letter-spacing: 0.02em;
+  margin-bottom: 8px;
 }
 
 .list-text {
@@ -129,12 +211,33 @@ body {
   line-height: 1.5;
 }
 
+.device {
+  max-width: 1440px;
+  padding: 0 156px 120px 156px;
+}
+
+.list-device {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 72px;
+  gap: 24px;
+}
+
 .device-img {
   border: 1px solid var(--active-color);
 }
 
 .section-team {
   background-color: var(--light-mode-background);
+  max-width: 1440px;
+  padding: 120px 156px;
+}
+
+.list-team {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 72px;
 }
 
 .section-title {
@@ -148,6 +251,9 @@ body {
 
 .team-item {
   background-color: var(--text-white-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .name-title {
@@ -158,16 +264,44 @@ body {
   color: var(--navigate-text);
   font-size: 20px;
   line-height: 1.2;
+  margin-top: 32px;
+  margin-bottom: 8px;
 }
 
 .name-text {
   letter-spacing: 0.02em;
   font-size: 16px;
   line-height: 1.5;
+  text-align: center;
+  margin-bottom: 32px;
+  order: 1;
 }
 
 .page-footer {
   background-color: var(--navigate-text);
+  width: 1440px;
+  padding: 100px 0 100px 156px;
+}
+
+.footer-logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--link-focused);
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-logo.link {
+  text-decoration: none;
+}
+
+.footer-logo:active {
+  color: var(--active-color);
 }
 
 .footer-accent {
@@ -190,7 +324,20 @@ body {
   width: 264px;
 }
 
-.list-button {
+.scope {
+  width: 1440px;
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.list-id {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 72px;
+}
+
+.link-button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -200,12 +347,47 @@ body {
   color: var(--link-focused);
   background-color: var(--light-mode-background);
   border: 1px solid var(--active-color);
+  border-radius: 4px;
+  padding: 12px 24px;
 }
 
-.list-button:hover,
-.list-button:focus {
+.link-button:hover,
+.link-button:focus {
   background-color: var(--button-color);
   color: var(--text-white-color);
+}
+
+.scope-container {
+  padding: 0 156px;
+}
+
+/* .list-scope {
+  display: flex;
+  flex-direction: row;
+ 
+} */
+
+.container-link-first {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding-bottom: 48px;
+}
+
+.container-link-second {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding-bottom: 48px;
+}
+
+.container-link-third {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
 }
 
 .scope-item {
@@ -218,9 +400,14 @@ body {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--navigate-text);
+  margin-top: 32px;
+  margin-bottom: 8px;
+  margin-left: 16px;
 }
 
 .scope-text {
+  margin-bottom: 32px;
+  margin-left: 16px;
   letter-spacing: 0.02em;
   color: var(--default-text);
   font-size: 16px;
