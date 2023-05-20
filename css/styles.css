@@ -258,7 +258,7 @@ header {
 
 .name-title {
   font-weight: 500;
-  text-align: center;
+
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: var(--navigate-text);
@@ -266,6 +266,7 @@ header {
   line-height: 1.2;
   margin-top: 32px;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .name-text {
@@ -332,9 +333,12 @@ header {
 
 .list-id {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
   gap: 24px;
-  justify-content: center;
   margin-bottom: 72px;
+  margin-left: 427px;
 }
 
 .link-button {
@@ -358,40 +362,18 @@ header {
 }
 
 .scope-container {
-  padding: 0 156px;
+  margin-left: 156px;
 }
 
-/* .list-scope {
+.list-scope {
   display: flex;
-  flex-direction: row;
- 
-} */
-
-.container-link-first {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 24px;
-  padding-bottom: 48px;
-}
-
-.container-link-second {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  padding-bottom: 48px;
-}
-
-.container-link-third {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
 }
 
 .scope-item {
   background-color: var(--text-white-color);
+  border: 1px solid var(--active-color);
 }
 
 .scope-title {
