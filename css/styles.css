@@ -48,8 +48,6 @@ a {
 
 .header-nav {
   border-bottom: 1px solid var(--active-color);
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 .header-container {
@@ -104,6 +102,7 @@ a {
 }
 
 .nav-list .link {
+  display: block;
   padding: 24px 0;
   letter-spacing: 0.02em;
   line-height: 1.5;
